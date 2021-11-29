@@ -33,10 +33,48 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
     "copyright": "Copyright Great Idea! 2021",
   },
   "images": {
-    "logo-img": "http://localhost:9000/img/logo.png",
-    "cta-img": "http://localhost:9000/img/cta.png",
-    "accent-img": "http://localhost:9000/img/accent.png",
+    "logo-img": "mocks/img/logo.png",
+    "cta-img": "mocks/img/cta.png",
+    "accent-img": "mocks/img/accent.png",
   },
 };
 
 console.log('project wired!')
+
+const links = document.querySelectorAll('nav a');
+const linksRealArray = Array.from(links);
+const linkTexts = Object.values(siteContent.nav);
+links.forEach((link, idx) => {
+  link.textContent = linkTexts[idx];
+  link.className = 'italic';
+});
+
+const headerimg = document.querySelector('#logo-img');
+headerimg.src = siteContent['images']['logo-img'];
+
+const topName = document.querySelector('.cta-text h1');
+topName.textContent = siteContent['cta']['h1'];
+
+const topButton = document.querySelector('.cta-text button');
+topButton.textContent = siteContent.cta.button;
+
+const ctaimg = document.querySelector('#cta-img');
+ctaimg.src = siteContent['images']['cta-img'];
+
+const contentText = document.querySelectorAll('.text-content h4');
+
+contentText[0].textContent = siteContent['main-content']['features-h4'];
+contentText[1].textContent = siteContent['main-content']['about-h4'];
+contentText[2].textContent = siteContent['main-content']['services-h4'];
+contentText[3].textContent = siteContent['main-content']['product-h4'];
+contentText[4].textContent = siteContent['main-content']['vision-h4'];
+
+const contentTexts = document.querySelectorAll('.text-content p')
+contentTexts[0].textContent = siteContent['main-content']['features-content'];
+contentTexts[1].textContent = siteContent['main-content']['about-content'];
+contentTexts[2].textContent = siteContent['main-content']['services-content'];
+contentTexts[3].textContent = siteContent['main-content']['product-content'];
+contentTexts[4].textContent = siteContent['main-content']['vision-content'];
+
+
+
